@@ -1,0 +1,43 @@
+Problem 3:
+No need to write a program. Just pseudocode is enough
+
+Define a class for a instagram post. Define the properties and functions.
+Define which one will be private and which one public.
+
+Write sql query from the following student table
+id      name     city        pincode     age
+1       Aravind  MAA         112         19
+2       ragul    MAA         113         20
+3       sree     MDU         021         19
+4       krishna  TRI         022         22
+
+Print the list of name from  MAA 
+Count the no of people from TRI
+Count the no of people in each city
+Print the avg age of the students in this table
+
+Solution:
+
+SELECT name FROM student WHERE city = 'MAA';
+
+SELECT COUNT(*) FROM student WHERE city = 'TRI';
+
+SELECT city, COUNT(*) FROM student GROUP BY city;
+
+SELECT AVG(age) FROM student;
+
+public property:
+like
+comment
+user name
+posts
+story
+
+
+private property:
+user_id
+user_location
+e-mail_id
+mobile_No
+
+
