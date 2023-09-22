@@ -40,4 +40,15 @@ user_location
 e-mail_id
 mobile_No
 
+class Instagram:
+
+    def __init__(self, username, , posts, story, likes, email, phone):
+        self.username = username  # Public property
+        self.posts = posts  # Public property
+        self.story = story  # Public property
+        self.likes = likes  # Public property        
+        self.email = email  # Private property
+        self.phone = phone  # Private property
+        self.location = location  # Private property
+
 

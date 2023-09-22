@@ -13,17 +13,18 @@ count=0
 
 x=0
 while True:
-    if seperateWords[x]=="the":
-        x=x+1
-        while True:
-            if "a" in seperateWords[x] :
-                x=x+1
-                break
-            if (x<=len(seperateWords)):
-                if (seperateWords[x]=="the"):
-                    count=count+1
-                    break
+    if (x<=len(seperateWords)):
+        if seperateWords[x]=="the":
             x=x+1
+            while True:
+                if "a" in seperateWords[x] :
+                    x=x+1
+                    break
+                if (x<=len(seperateWords)):
+                    if (seperateWords[x]=="the"):
+                        count=count+1
+                        break
+                x=x+1
     x=x+1
 
     if x==len(seperateWords):
