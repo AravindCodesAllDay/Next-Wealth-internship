@@ -1,0 +1,21 @@
+Write sql query from the following student table
+id      name     city        pincode     age
+1       Aravind  MAA         112         19
+2       ragul    MAA         113         20
+3       sree     MDU         021         19
+4       krishna  TRI         022         22
+
+1) Print the list of name from  MAA 
+2) Count the no of people from TRI
+3) Count the no of people in each city
+4) Print the avg age of the students in this table
+
+Solution:
+
+1) SELECT name FROM student WHERE city = 'MAA';
+
+2) SELECT COUNT(*) FROM student WHERE city = 'TRI';
+
+3) SELECT city, COUNT(*) FROM student GROUP BY city;
+
+4) SELECT AVG(age) FROM student;

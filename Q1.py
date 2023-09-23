@@ -6,27 +6,39 @@
 
 # answer is 4 (The king, the forest, The King the next).
 
+# input string
 sentence= "The king went to the forest with the wife and a servernt. The king shot a deer. The king went to the forest again the next day"
-sentence=sentence.lower()
-seperateWords = sentence.split()
-count=0
 
-x=0
-while True:
-    if (x<=len(seperateWords)):
-        if seperateWords[x]=="the":
+def findingCountOfThe(sentence) :
+    # Convert the the sentence into lower case
+    sentence=sentence.lower()
+    #appending each word into a list
+    seperateWords = sentence.split()
+    #declared a variable to keep count of
+    count=0
+    x=0
+    #looping each value in the list to find the word "the"
+    while True:
+        if (seperateWords[x]=="the"):
             x=x+1
+            #checking is there are any presence of "a" in between "the"s
             while True:
-                if "a" in seperateWords[x] :
-                    x=x+1
+                if ("a" in seperateWords[x])or(x>len(seperateWords)) :
                     break
-                if (x<=len(seperateWords)):
-                    if (seperateWords[x]=="the"):
-                        count=count+1
-                        break
+                if (seperateWords[x]=="the"):
+                    count=count+1
+                    x=x-1
+                    break
                 x=x+1
-    x=x+1
+        x=x+1
+        #condition to break the loop
+        if x==len(seperateWords):
+            break
+    return count
+#printing the final count
+print(f"Answer = {findingCountOfThe(sentence)}")
 
-    if x==len(seperateWords):
-        break
-print(count)
+#Output:
+# sentence="The king went to the forest with the wife and a servernt. The king shot a deer. The king went to the forest again the next day"
+# answer = 3
+#it also considers the occurence of "a" between words
